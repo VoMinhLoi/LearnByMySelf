@@ -51,9 +51,9 @@ public class HomeActivity extends AppCompatActivity {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Clothe clothes = clothesList.get(i);
+                Clothe clothe = clothesList.get(i);
                 Intent intent = new Intent(HomeActivity.this, DetailActivity.class);
-                intent.putCharSequenceArrayListExtra("Item", clothes);
+                intent.putExtra("Item", clothe);
                 startActivity(intent);
             }
         });
@@ -67,10 +67,11 @@ public class HomeActivity extends AppCompatActivity {
     }
     public void GetData(){
         clothesList = new ArrayList<>();
-        clothesList.add(new Clothe("1", "Ao1", "199k", "Siêu đẹp",  R.drawable.aos));
-        clothesList.add(new Clothe("2", "Ao2", "299k", "Siêu đẹp",  R.drawable.aos));
-        clothesList.add(new Clothe("3", "Ao3", "399k", "Siêu đẹp",  R.drawable.aos));
-        clothesList.add(new Clothe("4", "Ao4", "499k", "Siêu đẹp",  R.drawable.aos));
+        clothesList.add(new Clothe("1", "Ao1", "199k", "Áo quần được sản xuất dưới công nghệ hiện đại, chất liệu siêu bền bỉ, chống thấm nước, không bay màu, vải thoáng mát, dễ chịu, dễ dàng vệ sinh.", "1",  R.drawable.aos));
+        clothesList.add(new Clothe("2", "Ao2", "299k", "Áo quần được sản xuất dưới công nghệ hiện đại, chất liệu siêu bền bỉ, chống thấm nước, không bay màu, vải thoáng mát, dễ chịu, dễ dàng vệ sinh.", "2", R.drawable.aos));
+        clothesList.add(new Clothe("3", "Ao3", "399k", "Áo quần được sản xuất dưới công nghệ hiện đại, chất liệu siêu bền bỉ, chống thấm nước, không bay màu, vải thoáng mát, dễ chịu, dễ dàng vệ sinh.", "3", R.drawable.aos));
+        clothesList.add(new Clothe("4", "Ao4", "499k", "Áo quần được sản xuất dưới công nghệ hiện đại, chất liệu siêu bền bỉ, chống thấm nước, không bay màu, vải thoáng mát, dễ chịu, dễ dàng vệ sinh.", "4", R.drawable.aos));
+
         imageList = new ArrayList<>();
         imageList.add(new Image(R.drawable.slider1));
         imageList.add(new Image(R.drawable.slider2));

@@ -1,8 +1,9 @@
 package com.example.learnbymyself.Activity.Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Clothe extends ArrayList<CharSequence> {
+public class Clothe implements Serializable {
     private String id, clothesName, price, description, quantity;
     private int image;
     public Clothe(String id, String clothesName, String price, String description, int image) {
