@@ -24,6 +24,7 @@
         android:layout_height="80dp"
         android:background="@color/white">
         <Button
+            android:id="@+id/customor_header_navigation_loginButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -33,6 +34,7 @@
             android:textColor="@color/white"
             />
         <Button
+            android:id="@+id/customor_header_navigation_registerButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"

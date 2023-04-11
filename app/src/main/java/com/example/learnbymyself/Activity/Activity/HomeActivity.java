@@ -59,11 +59,11 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
     public void AnhXa(){
-        gridView = findViewById(R.id.newClothesGV);
+        gridView = findViewById(R.id.Home_newClothesGV);
         drawerLayout = findViewById(R.id.drawerLayout);
-        showNav = findViewById(R.id.showingNavigationBT);
-        viewPager2 = findViewById(R.id.imagesViewPager);
-        circleIndicator3 = findViewById(R.id.circleIndicator);
+        showNav = findViewById(R.id.Home_showingNavigationBT);
+        viewPager2 = findViewById(R.id.Home_imagesViewPager);
+        circleIndicator3 = findViewById(R.id.Home_circleIndicator);
     }
     public void GetData(){
         clothesList = new ArrayList<>();

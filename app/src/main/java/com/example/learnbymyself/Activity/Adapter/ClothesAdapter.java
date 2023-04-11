@@ -46,11 +46,11 @@ public class ClothesAdapter extends BaseAdapter {
 
         if(view == null) {
             LayoutInflater inflater = activity.getLayoutInflater();
-            view = inflater.inflate(R.layout.customor_aoquan,null);
+            view = inflater.inflate(R.layout.customor_clothe,null);
             viewHolder = new ViewHolder();
-            viewHolder.imageView = view.findViewById(R.id.img);
-            viewHolder.nameTV = view.findViewById(R.id.nameTV);
-            viewHolder.priceTV = view.findViewById(R.id.priceTV);
+            viewHolder.imageView = view.findViewById(R.id.customor_clothe_img);
+            viewHolder.nameTV = view.findViewById(R.id.customor_clothe_nameTV);
+            viewHolder.priceTV = view.findViewById(R.id.customor_clothe_priceTV);
             view.setTag(viewHolder);
         }
         else{

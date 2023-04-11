@@ -79,11 +79,11 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     public void AnhXa(){
-        userNameTVAX = findViewById(R.id.RG_userName);
-        passTVAX = findViewById(R.id.RG_pass);
-        confirmTVAX = findViewById(R.id.RG_confirmPass);
-        registerBTAX = findViewById(R.id.RG_button);
-        loginBTAX = findViewById(R.id.LG_button_RG);
+        userNameTVAX = findViewById(R.id.ReGister_userName);
+        passTVAX = findViewById(R.id.ReGister_pass);
+        confirmTVAX = findViewById(R.id.ReGister_confirmPass);
+        registerBTAX = findViewById(R.id.ReGister_registerButton);
+        loginBTAX = findViewById(R.id.ReGister_loginButton);
     }
     public void GetData(){
         userName = userNameTVAX.getText().toString();

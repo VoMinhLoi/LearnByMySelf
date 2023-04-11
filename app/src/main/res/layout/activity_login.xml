@@ -26,7 +26,7 @@
         <EditText
 
             android:textColor="@color/black"
-            android:id="@+id/LG_userName"
+            android:id="@+id/LoGin_userName"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="2"
@@ -39,7 +39,7 @@
             />
 
         <EditText
-            android:id="@+id/LG_pass"
+            android:id="@+id/LoGin_pass"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_margin="20dp"
@@ -55,7 +55,7 @@
             android:layout_weight="4"
             android:orientation="vertical">
             <Button
-                android:id="@+id/LG_button"
+                android:id="@+id/LoGin_button"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="4"
@@ -66,7 +66,7 @@
                 android:textColor="@color/white"
                 />
             <Button
-                android:id="@+id/RG_button_LG"
+                android:id="@+id/LoGin_registerButton"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="4"

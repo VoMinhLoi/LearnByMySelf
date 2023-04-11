@@ -69,10 +69,10 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
     public void AnhXa(){
-        userNameTVAX = findViewById(R.id.LG_userName);
-        passTVAX = findViewById(R.id.LG_pass);
-        loginBTAX = findViewById(R.id.LG_button);
-        registerBT = findViewById(R.id.RG_button_LG);
+        userNameTVAX = findViewById(R.id.LoGin_userName);
+        passTVAX = findViewById(R.id.LoGin_pass);
+        loginBTAX = findViewById(R.id.LoGin_button);
+        registerBT = findViewById(R.id.LoGin_registerButton);
     }
     public void GetData(){
         userName = userNameTVAX.getText().toString();

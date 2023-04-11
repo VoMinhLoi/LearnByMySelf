@@ -16,7 +16,7 @@
             android:layout_weight="1"
             android:orientation="horizontal">
             <ImageButton
-                android:id="@+id/showingNavigationBT"
+                android:id="@+id/Home_showingNavigationBT"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
@@ -31,6 +31,7 @@
                 android:textSize="20dp"
                 android:layout_weight="6"/>
             <ImageButton
+                android:id="@+id/Home_showingCart"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
@@ -48,12 +49,12 @@
                 android:layout_weight="4"
                 android:orientation="vertical">
                 <androidx.viewpager2.widget.ViewPager2
-                    android:id="@+id/imagesViewPager"
+                    android:id="@+id/Home_imagesViewPager"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="3.5"/>
                 <me.relex.circleindicator.CircleIndicator3
-                    android:id="@+id/circleIndicator"
+                    android:id="@+id/Home_circleIndicator"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="0.5"/>
@@ -76,7 +77,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="5">
                 <GridView
-                    android:id="@+id/newClothesGV"
+                    android:id="@+id/Home_newClothesGV"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:numColumns="2"/>
@@ -85,7 +86,7 @@
 
     </LinearLayout>
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/menuNavigation"
+        android:id="@+id/Home_menuNavigation"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:headerLayout="@layout/customor_header_navigation"

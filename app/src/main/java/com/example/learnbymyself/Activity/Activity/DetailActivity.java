@@ -29,4 +29,7 @@ public class DetailActivity extends AppCompatActivity {
         clothe = (Clothe) intent.getCharSequenceArrayListExtra("Item");
 
     }
+    public void AnhXa(){
+        imageView = findViewById(R.id.Detail_image);
+    }
 }

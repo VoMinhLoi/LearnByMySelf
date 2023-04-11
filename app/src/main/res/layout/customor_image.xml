@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <ImageView
-        android:id="@+id/imageCTM"
+        android:id="@+id/customor_image_imageCTM"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 </LinearLayout>
