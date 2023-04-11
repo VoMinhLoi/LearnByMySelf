@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.Activity.RegisterActivity"
+    android:background="@drawable/background_register">
+    <TextView
+        android:layout_weight="2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:hint="Đăng ký"
+        android:textSize="50dp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+
+        android:orientation="vertical">
+
+        <EditText
+            android:textColor="@color/black"
+            android:id="@+id/RG_userName"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Tài khoản"
+            android:background="@drawable/border_radius"
+            android:layout_margin="10dp"
+            android:paddingLeft="10dp"
+            />
+        <EditText
+            android:id="@+id/RG_pass"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:background="@drawable/border_radius"
+            android:paddingLeft="10dp"
+            android:layout_margin="10dp"
+            android:inputType="textPassword"
+            android:hint="Mật khẩu"/>
+        <EditText
+            android:id="@+id/RG_confirmPass"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:background="@drawable/border_radius"
+            android:paddingLeft="10dp"
+            android:layout_margin="10dp"
+            android:inputType="textPassword"
+            android:hint="Nhập lại mật khẩu"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/RG_button"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4"
+                android:text="Đăng ký"
+                android:background="@drawable/border_radius"
+                android:backgroundTint="@color/black"
+                android:layout_margin="20dp"
+                android:textColor="@color/white"
+                />
+            <Button
+                android:id="@+id/LG_button_RG"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4"
+                android:text="Đăng nhập"
+                android:background="@drawable/border_radius"
+                android:backgroundTint="@color/black"
+                android:layout_margin="20dp"
+                android:textColor="@color/white"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
