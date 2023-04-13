@@ -20,6 +20,17 @@ public class DetailActivity extends AppCompatActivity {
     ImageView imageView;
     TextView nameTV, descriptionTV, priceTV, quantityTV;
     Button descreaseBT, increaseBT, insertToCartBT;
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_detail);
+        AnhXa();
+        GetData();
+        Increase();
+        Descrease();
+        InsertToCart();
+    }
     public void AnhXa(){
         imageView = findViewById(R.id.Detail_image);
         nameTV = findViewById(R.id.Detail_nameProductTV);
@@ -28,6 +39,7 @@ public class DetailActivity extends AppCompatActivity {
         quantityTV = findViewById(R.id.Detail_quantityTV);
         increaseBT = findViewById(R.id.Detail_increaseBT);
         descreaseBT = findViewById(R.id.Detail_descreaseBT);
+        insertToCartBT = findViewById(R.id.Detail_insertToCartBT);
     }
     public void GetData(){
         Intent intent = getIntent();
@@ -37,15 +49,6 @@ public class DetailActivity extends AppCompatActivity {
         descriptionTV.setText(clothe.getDescription());
         priceTV.setText(clothe.getPrice());
         quantityTV.setText(clothe.getQuantity());
-    }
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail);
-        AnhXa();
-        GetData();
-        Increase();
-        Descrease();
     }
     public void Increase(){
         increaseBT.setOnClickListener(new View.OnClickListener() {
@@ -69,6 +72,23 @@ public class DetailActivity extends AppCompatActivity {
                     quantity--;
                     quantityTV.setText("" + quantity);
                 }
+            }
+        });
+    }
+    public void InsertToCart(){
+        insertToCartBT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DetailActivity.this, CartActivity.class);
+                String name = clothe.getClothesName();
+                int image = clothe.getImage();
+                String description = clothe.getDescription();
+                String price = clothe.getPrice();
+                String quantity = clothe.getQuantity();
+//                String id, String clothesName, String price, String description, String quantity, int image
+                Clothe clotheTempory = new Clothe(clothe.getId(),name, price,description, quantity, image);
+                intent.putExtra("DetailItem", clotheTempory);
+                startActivity(intent);
             }
         });
     }

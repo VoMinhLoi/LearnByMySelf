@@ -67,7 +67,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="1.5">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -78,29 +78,27 @@
             android:id="@+id/Detail_quantityTV"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="9"
+            android:layout_weight="8"
             android:text=""
             android:gravity="center_vertical"
             />
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:orientation="vertical">
             <Button
                 android:id="@+id/Detail_increaseBT"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.5"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:textColor="@color/white"
                 android:background="@drawable/radius_insert_to_cart_button"
                 android:text="+"/>
             <Button
                 android:id="@+id/Detail_descreaseBT"
                 android:layout_marginTop="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.5"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:textColor="@color/white"
                 android:background="@drawable/radius_insert_to_cart_button"
                 android:text="-"
@@ -111,8 +109,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2">
+        android:layout_weight="1.5">
         <Button
+            android:id="@+id/Detail_insertToCartBT"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="30dp"
