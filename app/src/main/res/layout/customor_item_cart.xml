@@ -30,7 +30,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="6"
-                android:text="Product is producted in VietNamese. Quantity is very comfortable, clean. Style of moden."/>
+                android:maxLines="4"
+                android:ellipsize="end"
+                android:text="Product is producted in VietNamese. Quantity is very comfortable, clean. Style of moden. Style of moden. Style of moden."/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -46,14 +48,26 @@
                     android:layout_height="wrap_content"
                     android:text="3"
                     android:gravity="center_vertical"/>
-                <TextView
-                    android:id="@+id/customor_item_cart_priceTV"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="100.000VND"
-                    android:textColor="@android:color/holo_red_light"
-                    android:textStyle="italic"
-                    android:gravity="right"/>
+                    android:gravity="right">
+                    <TextView
+                        android:id="@+id/customor_item_cart_priceTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="100.000"
+                        android:textColor="@android:color/holo_red_light"
+                        android:textStyle="italic"
+                        android:gravity="center_vertical"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text=" VND"
+                        android:textColor="@android:color/holo_red_light"
+                        android:textStyle="italic"
+                        android:gravity="center_vertical"/>
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
@@ -62,20 +76,24 @@
             android:layout_weight="2"
             android:orientation="vertical"
             android:gravity="center_vertical">
+
             <Button
                 android:id="@+id/customor_item_cart_increaseBT"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:background="@drawable/radius_insert_to_cart_button"
                 android:layout_margin="5dp"
-                android:text="+"/>
+                android:background="@drawable/radius_insert_to_cart_button"
+                android:text="+"
+                android:textColor="@color/white" />
+
             <Button
                 android:id="@+id/customor_item_cart_descreaseBT"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:background="@drawable/radius_insert_to_cart_button"
                 android:layout_margin="5dp"
-                android:text="-"/>
+                android:background="@drawable/radius_insert_to_cart_button"
+                android:text="-"
+                android:textColor="@color/white" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

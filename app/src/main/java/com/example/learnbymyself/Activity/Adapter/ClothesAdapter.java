@@ -8,6 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+//import com.bumptech.glide.Glide;
+import com.bumptech.glide.Glide;
 import com.example.learnbymyself.Activity.Model.Clothe;
 import com.example.learnbymyself.R;
 
@@ -15,16 +17,21 @@ import java.util.List;
 
 public class ClothesAdapter extends BaseAdapter {
     private Activity activity;
-    private List<Clothe> aoQuanList;
-
+    private List<Clothe> clotheList;
+    public ClothesAdapter(Activity activity) {
+        this.activity = activity;
+    }
+    public ClothesAdapter(List<Clothe> aoQuanList) {
+        this.clotheList = aoQuanList;
+    }
     public ClothesAdapter(Activity activity, List<Clothe> aoQuanList) {
         this.activity = activity;
-        this.aoQuanList = aoQuanList;
+        this.clotheList = aoQuanList;
     }
 
     @Override
     public int getCount() {
-        return aoQuanList.size();
+        return clotheList.size();
     }
 
     @Override
@@ -43,7 +50,6 @@ public class ClothesAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder viewHolder;
-
         if(view == null) {
             LayoutInflater inflater = activity.getLayoutInflater();
             view = inflater.inflate(R.layout.customor_clothe,null);
@@ -56,11 +62,10 @@ public class ClothesAdapter extends BaseAdapter {
         else{
             viewHolder = (ViewHolder) view.getTag();
         }
-
-        Clothe aoQuan = aoQuanList.get(i);
-        viewHolder.imageView.setImageResource(aoQuan.getImage());
-        viewHolder.nameTV.setText(aoQuan.getClothesName());
-        viewHolder.priceTV.setText(aoQuan.getPrice());
+        Clothe clothe = clotheList.get(i);
+        Glide.with(viewHolder.imageView.getContext()).load(clothe.getImage()).into(viewHolder.imageView);
+        viewHolder.nameTV.setText(clothe.getClothesName());
+        viewHolder.priceTV.setText(clothe.getPrice());
         return view;
     }
 }

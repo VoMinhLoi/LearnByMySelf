@@ -10,16 +10,28 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+//import com.bumptech.glide.Glide;
+import com.bumptech.glide.Glide;
 import com.example.learnbymyself.Activity.Model.Clothe;
-import com.example.learnbymyself.Activity.Model.Image;
 import com.example.learnbymyself.R;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
 public class CartAdapter extends BaseAdapter {
     List<Clothe> clotheList;
     Activity activity;
+    Integer totalFloat = 0;
 
+    public Integer getTotalFloat() {
+        return totalFloat;
+    }public CartAdapter(List<Clothe> clotheList) {
+        this.clotheList = clotheList;
+    }
+    public void setActivity(Activity activity){
+        this.activity = activity;
+    }
     public CartAdapter(List<Clothe> clotheList, Activity activity) {
         this.clotheList = clotheList;
         this.activity = activity;
@@ -39,39 +51,63 @@ public class CartAdapter extends BaseAdapter {
     public long getItemId(int i) {
         return 0;
     }
-
+    public class ViewHolder{
+        ImageView imageView;
+        TextView nameTV,descriptionTV, priceTV, quantityTV;
+        Button increaseBT, descreaseBT;
+    }
     @Override
+
     public View getView(int i, View view, ViewGroup viewGroup) {
-        LayoutInflater layoutInflater = activity.getLayoutInflater();
-        view = layoutInflater.inflate(R.layout.customor_item_cart, null);
-        ImageView imageView = view.findViewById(R.id.customor_item_cart_image);
-        TextView nameTV = view.findViewById(R.id.customor_item_cart_nameTV);
-        TextView descriptionTV = view.findViewById(R.id.customor_item_cart_descriptionTV);
-        TextView quantityTV = view.findViewById(R.id.customor_item_cart_quantityTV);
-        TextView priceTV = view.findViewById(R.id.customor_item_cart_priceTV);
-        Button increase = view.findViewById(R.id.customor_item_cart_increaseBT);
-        Button descrease = view.findViewById(R.id.customor_item_cart_descreaseBT);
+        ViewHolder viewHolder;
+        if (view == null) {
+            viewHolder = new ViewHolder();
+            LayoutInflater layoutInflater = activity.getLayoutInflater();
+            view = layoutInflater.inflate(R.layout.customor_item_cart, null);
+            viewHolder.imageView = view.findViewById(R.id.customor_item_cart_image);
+            viewHolder.nameTV = view.findViewById(R.id.customor_item_cart_nameTV);
+            viewHolder.descriptionTV = view.findViewById(R.id.customor_item_cart_descriptionTV);
+            viewHolder.quantityTV = view.findViewById(R.id.customor_item_cart_quantityTV);
+            viewHolder.priceTV = view.findViewById(R.id.customor_item_cart_priceTV);
+            viewHolder.increaseBT = view.findViewById(R.id.customor_item_cart_increaseBT);
+            viewHolder.descreaseBT = view.findViewById(R.id.customor_item_cart_descreaseBT);
+            view.setTag(viewHolder);
+        }
+        else{
+            viewHolder = (ViewHolder) view.getTag();
+        }
+
+
         Clothe clothe = clotheList.get(i);
-        imageView.setImageResource(clothe.getImage());
-        nameTV.setText(clothe.getClothesName());
-        descriptionTV.setText(clothe.getDescription());
-        quantityTV.setText(clothe.getQuantity());
-        priceTV.setText(clothe.getPrice());
-        increase.setOnClickListener(new View.OnClickListener() {
+        Glide.with(viewHolder.imageView.getContext()).load(clothe.getImage()).into(viewHolder.imageView);
+        viewHolder.nameTV.setText(clothe.getClothesName());
+        viewHolder.descriptionTV.setText(clothe.getDescription());
+        viewHolder.quantityTV.setText(clothe.getQuantity());
+        viewHolder.priceTV.setText(clothe.getPrice());
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        System.out.println(i);
+        String path = "Cart/" + i + "/quantity";
+        DatabaseReference myRef = database.getReference(path);
+        viewHolder.increaseBT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int quantity = Integer.parseInt(quantityTV.getText().toString());
+
+                int quantity = Integer.parseInt(viewHolder.quantityTV.getText().toString());
                 quantity++;
-                quantityTV.setText(String.valueOf(quantity));
+                viewHolder.quantityTV.setText(String.valueOf(quantity));
+
+                myRef.setValue(String.valueOf(quantity));
+                System.out.println(quantity);
             }
         });
-        descrease.setOnClickListener(new View.OnClickListener() {
+        viewHolder.descreaseBT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int quantity = Integer.parseInt(quantityTV.getText().toString());
+                int quantity = Integer.parseInt(viewHolder.quantityTV.getText().toString());
                 if(quantity>1){
                     quantity--;
-                    quantityTV.setText(String.valueOf(quantity));
+                    viewHolder.quantityTV.setText(String.valueOf(quantity));
+                    myRef.setValue(String.valueOf(quantity));
                 }
                 else
                     Toast.makeText(activity, "Ít nhất là 1 sản phẩm", Toast.LENGTH_SHORT).show();

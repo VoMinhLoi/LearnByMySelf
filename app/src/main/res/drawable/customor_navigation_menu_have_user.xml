@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Sản phẩm">
+        <menu>
+            <item android:id="@+id/menu_ViecLamDaLuu"
+                android:title="Áo"/>
+            <item android:id="@+id/menu_ViecLamUngTuyen"
+                android:title="Quần"/>
+        </menu>
+    </item>
+    <item android:title="Hồ sơ của bạn">
+        <menu>
+            <item
+                android:id="@+id/menu_QuanLyNguoiDung"
+                android:title="Hồ sơ" />
+            <item
+                android:id="@+id/menu_QuanLyCV"
+                android:title="Quản lý CV" />
+            <item
+                android:title="Giỏ hàng"/>
+        </menu>
+    </item>
+    <item android:title="Hồ sơ của bạn">
+        <menu>
+            <item
+                android:id="@+id/menu_DangXuat"
+                android:title="Đăng xuất" />
+
+        </menu>
+    </item>
+</menu>

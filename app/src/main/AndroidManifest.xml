@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,7 +14,7 @@
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".Activity.Activity.HomeActivity"
+            android:name=".Activity.Activity.ProfileActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,10 +26,11 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        <activity android:name=".Activity.Activity.HomeActivity"/>
         <activity android:name=".Activity.Activity.LoginActivity"/>
-        <activity android:name=".Activity.Activity.RegisterActivity"/>
-        <activity android:name=".Activity.Activity.DetailActivity"/>
         <activity android:name=".Activity.Activity.CartActivity"/>
+        <activity android:name=".Activity.Activity.DetailActivity"/>
+        <activity android:name=".Activity.Activity.RegisterActivity"/>
     </application>
 
 </manifest>

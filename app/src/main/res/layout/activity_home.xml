@@ -5,8 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/primary_color">
+    android:background="@color/primary_color_light_blue">
     <LinearLayout
+        android:background="@color/white"
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -14,14 +16,16 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="#FF5722">
             <ImageButton
                 android:id="@+id/Home_showingNavigationBT"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
-                android:src="@drawable/ic_baseline_list_24"
-                android:background="@color/primary_color"/>
+                android:src="@drawable/baseline_format_list_bulleted_24_white"
+                android:background="@null"
+                />
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -29,15 +33,31 @@
                 android:gravity="center"
                 android:textColor="@color/white"
                 android:textSize="20dp"
-                android:layout_weight="6"/>
-            <ImageButton
-                android:id="@+id/Home_showingCart"
+                android:layout_weight="6"
+                android:textStyle="bold"/>
+            <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
                 android:layout_weight="2"
-                android:background="@null"
-                android:src="@drawable/ic_baseline_shopping_cart_24"/>
+                android:layout_height="match_parent">
+                <ImageButton
+                    android:id="@+id/Home_showingCart"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:src="@drawable/baseline_shopping_cart_24_white"/>
+                <TextView
+                    android:id="@+id/Home_Cart_Quantity"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"/>
+            </LinearLayout>
         </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#2E3335"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -53,22 +73,27 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="3.5"/>
+
                 <me.relex.circleindicator.CircleIndicator3
                     android:id="@+id/Home_circleIndicator"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="0.5"/>
+                    android:layout_weight="0.5"
+                    app:ci_drawable="@drawable/circleind_unselected"
+                    android:backgroundTint="@color/primary_color_orange" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:background="#FF5722">
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="Sản phẩm mới nhất"
                     android:gravity="center"
                     android:textSize="20dp"
+                    android:background="@drawable/border_top_bottom"
                     android:textColor="@color/white"/>
 
             </LinearLayout>
@@ -89,6 +114,5 @@
         android:id="@+id/Home_menuNavigation"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:headerLayout="@layout/customor_header_navigation"
         android:layout_gravity="start"/>
 </androidx.drawerlayout.widget.DrawerLayout>

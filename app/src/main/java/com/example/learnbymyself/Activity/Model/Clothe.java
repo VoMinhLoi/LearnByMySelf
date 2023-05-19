@@ -1,19 +1,21 @@
 package com.example.learnbymyself.Activity.Model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 public class Clothe implements Serializable {
     private String id, clothesName, price, description, quantity;
-    private int image;
-    public Clothe(String id, String clothesName, String price, String description, int image) {
+    private String image;
+    public Clothe(){
+
+    }
+    public Clothe(String id, String clothesName, String price, String description, String image) {
         this.id = id;
         this.clothesName = clothesName;
         this.price = price;
         this.description = description;
         this.image = image;
     }
-    public Clothe(String id, String clothesName, String price, String description, String quantity, int image) {
+    public Clothe(String id, String clothesName, String price, String description, String quantity, String image) {
         this.id = id;
         this.clothesName = clothesName;
         this.price = price;
@@ -54,12 +56,12 @@ public class Clothe implements Serializable {
         this.description = description;
     }
 
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(int image) {
-        this.image = image;
+    public void setImage(String img) {
+        this.image = img;
     }
 
     public String getQuantity() {
